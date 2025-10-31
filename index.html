@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaSentry - Working Demo</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #003366, #0099cc);
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+  }
+
+  .scene {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scene.active { opacity: 1; }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    width: 80%;
+    max-width: 800px;
+    font-size: 1.3em;
+  }
+
+  img {
+    max-width: 60%;
+    border-radius: 12px;
+    margin: 1em 0;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  }
+
+  footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.1em;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="scene active" id="scene1">
+  <h1>Our Innovative Project</h1>
+  <h2>AquaSentry</h2>
+  <p>Ensuring Safe Water, Empowering Rural India</p>
+</div>
+
+<div class="scene" id="scene2">
+  <h1>The Problem</h1>
+  <img src="https://i.ytimg.com/vi/lKyWmQ2N9yA/maxresdefault.jpg" alt="Dirty handpump water">
+  <p>In many rural areas, contaminated handpump and tap water cause illness and waste resources.</p>
+</div>
+
+<div class="scene" id="scene3">
+  <h1>The Idea</h1>
+  <img src="https://circuitdigest.com/sites/default/files/projectimage_mic/Aquaculture-Monitoring-System-using-IoT.jpg" alt="Water sensors hardware">
+  <p>A smart, solar-powered tap add-on that tests water quality in real time and shows results on a small display.</p>
+</div>
+
+<div class="scene" id="scene4">
+  <h1>How It Works</h1>
+  <img src="https://www.researchgate.net/publication/353677681/figure/fig5/AS%3A1052920212631560%401628047149411/Water-quality-control-flowchart.png" alt="Logic flowchart">
+  <p>Inside the tap, sensors measure pH, turbidity, and temperature. Data is processed and displayed instantly.</p>
+</div>
+
+<div class="scene" id="scene5">
+  <h1>Power & Sustainability</h1>
+  <img src="https://5.imimg.com/data5/SELLER/Default/2021/1/ZE/TT/HO/80114728/solar-panel-500x500.jpg" alt="Solar panel">
+  <p>A compact solar panel powers the system, ensuring long-term, maintenance-free operation even in remote areas.</p>
+</div>
+
+<div class="scene" id="scene6">
+  <h1>Future Vision</h1>
+  <p>Data logs stored hourly help track water safety trends and alert communities about contamination early.</p>
+</div>
+
+<div class="scene" id="scene7">
+  <img src="https://developedindiamission.org/wp-content/themes/dim/app/images/logo-hi.png" alt="Viksit Bharat Abhiyan Logo">
+  <h2>AquaSentry</h2>
+  <p>Presented under the Viksit Bharat Abhiyan Buildthon</p>
+  <footer>© 2025 AquaSentry Team</footer>
+</div>
+
+<script>
+  const scenes = document.querySelectorAll('.scene');
+  let current = 0;
+
+  setInterval(() => {
+    scenes[current].classList.remove('active');
+    current = (current + 1) % scenes.length;
+    scenes[current].classList.add('active');
+  }, 7000); // changes every 7 seconds
+</script>
+
+</body>
+  </html>
